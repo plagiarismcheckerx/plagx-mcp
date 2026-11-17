@@ -1,0 +1,13 @@
+test/
+assets/
+.git/
+.github/
+Dockerfile
+glama.json
+server.json
+smithery.yaml
+wrangler.jsonc
+src/worker.js
+*.mcpb
+*.tgz
+.wrangler/

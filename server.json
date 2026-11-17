@@ -1,0 +1,23 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.plagiarismcheckerx/plagx-mcp",
+  "title": "Plagx Cite + Preflight",
+  "description": "APA/MLA citations, reference list checks, BibTeX, DOI lookup and an essay draft checker.",
+  "repository": {
+    "url": "https://github.com/plagiarismcheckerx/plagx-mcp",
+    "source": "github"
+  },
+  "websiteUrl": "https://github.com/plagiarismcheckerx/plagx-mcp#readme",
+  "version": "1.0.0",
+  "packages": [
+    {
+      "registryType": "npm",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "identifier": "plagx-mcp",
+      "version": "1.0.0",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ]
+}
