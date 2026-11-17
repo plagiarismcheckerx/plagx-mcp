@@ -1,0 +1,14 @@
+{
+  "name": "plagx-cite-preflight",
+  "displayName": "Plagx Cite + Preflight",
+  "version": "1.0.0",
+  "description": "APA/MLA citations, reference list checks, BibTeX, DOI lookup and an essay draft checker (word count, citations vs. references, punctuation, basic grammar).",
+  "author": {
+    "name": "Plagiarism Checker X",
+    "url": "https://plagiarismcheckerx.com/?utm_source=plagx-mcp-claude-plugin"
+  },
+  "homepage": "https://github.com/plagiarismcheckerx/plagx-mcp/tree/main/plugin",
+  "repository": "https://github.com/plagiarismcheckerx/plagx-mcp",
+  "license": "MIT",
+  "keywords": ["citation", "apa", "mla", "bibliography", "bibtex", "doi", "essay", "academic-writing", "grammar", "word-count"]
+}

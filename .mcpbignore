@@ -11,3 +11,5 @@ src/worker.js
 *.mcpb
 *.tgz
 .wrangler/
+.claude-plugin/
+plugin/

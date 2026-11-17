@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "plagx": {
+      "command": "npx",
+      "args": ["-y", "plagx-mcp@1.0.0"]
+    }
+  }
+}

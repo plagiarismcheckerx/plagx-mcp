@@ -1,0 +1,17 @@
+{
+  "name": "plagx",
+  "owner": {
+    "name": "Plagiarism Checker X",
+    "url": "https://github.com/plagiarismcheckerx"
+  },
+  "metadata": {
+    "description": "Free academic writing tools by Plagiarism Checker X: citations, reference lists and draft checks."
+  },
+  "plugins": [
+    {
+      "name": "plagx-cite-preflight",
+      "source": "./plugin",
+      "description": "APA/MLA citations, reference list checks, BibTeX, DOI lookup and an essay draft checker."
+    }
+  ]
+}

@@ -91,6 +91,9 @@ npm run inspect   # open the MCP Inspector
 | `src/server.js` | The MCP server and its tools |
 | `src/http.js` | Streamable HTTP handler (web-standard) |
 | `src/node-http.js` | Runs the HTTP handler on Node |
+| `src/worker.js`, `wrangler.jsonc` | Cloudflare Workers deployment of the hosted endpoint |
+| `src/poe.js` | Poe server bot at `/poe`: draft report, DOI citations or BibTeX reference list from a pasted message |
+| `plugin/` | Claude plugin: the MCP server plus a `check-academic-draft` skill |
 | `bin/plagx-mcp.js` | CLI: stdio by default, `--http [port]` for HTTP |
 | `server.json` | Official MCP Registry entry |
 | `manifest.json` | Claude Desktop extension (MCPB) manifest |

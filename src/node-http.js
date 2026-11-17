@@ -17,7 +17,7 @@ function toRequest(req, host) {
 export function serve(port, host = '127.0.0.1') {
   const server = createServer(async (req, res) => {
     try {
-      const response = await handle(toRequest(req, `${host}:${port}`));
+      const response = await handle(toRequest(req, `${host}:${port}`), process.env);
       res.writeHead(response.status, Object.fromEntries(response.headers));
       if (response.body) {
         for await (const chunk of response.body) res.write(chunk);

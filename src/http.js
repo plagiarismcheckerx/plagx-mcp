@@ -1,9 +1,12 @@
 // Streamable HTTP endpoint (stateless, JSON responses) using web-standard Request/Response,
 // so the same handler runs on Node, Cloudflare Workers, Deno or Bun.
 //   POST /mcp   MCP requests
+//   POST /poe   Poe server bot (needs POE_ACCESS_KEY)
+//   GET  /.well-known/openai-apps-challenge   ChatGPT domain check (OPENAI_APPS_CHALLENGE)
 //   GET  /      short description, for people who open the URL
 import { WebStandardStreamableHTTPServerTransport } from '@modelcontextprotocol/sdk/server/webStandardStreamableHttp.js';
 import { createServer, NAME, VERSION } from './server.js';
+import { handlePoe } from './poe.js';
 
 const MAX_BODY = 1_000_000;
 const HOME = 'https://github.com/plagiarismcheckerx/plagx-mcp';
@@ -24,8 +27,8 @@ const withCors = (res) => {
 const json = (data, status = 200) =>
   new Response(JSON.stringify(data), { status, headers: { 'content-type': 'application/json' } });
 
-/** Handle one HTTP request. */
-export async function handle(request) {
+/** Handle one HTTP request. `env` holds the optional POE_ACCESS_KEY and OPENAI_APPS_CHALLENGE. */
+export async function handle(request, env = {}) {
   const { pathname } = new URL(request.url);
   if (request.method === 'OPTIONS') return new Response(null, { status: 204, headers: CORS });
 
@@ -53,6 +56,11 @@ export async function handle(request) {
       source: HOME,
     }));
   }
+  if (pathname === '/poe') return handlePoe(request, env);
+  if (pathname === '/.well-known/openai-apps-challenge' && env.OPENAI_APPS_CHALLENGE) {
+    return new Response(env.OPENAI_APPS_CHALLENGE, { headers: { 'content-type': 'text/plain' } });
+  }
+  if (pathname === '/privacy') return Response.redirect(`${HOME}/blob/main/PRIVACY.md`, 302);
   if (pathname === '/health') return withCors(json({ ok: true }));
   return withCors(json({ error: 'Not found' }, 404));
 }

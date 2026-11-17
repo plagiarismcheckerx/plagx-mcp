@@ -18,7 +18,7 @@ Plagx Cite + Preflight MCP is a free, open-source tool by Plagiarism Checker X. 
 
 ## Hosted endpoint
 
-The hosted endpoint runs the same code. Like any web service, its hosting provider may keep short-lived technical logs (IP address, time, request size) for security and abuse prevention. Request bodies are not logged.
+The hosted endpoint (used by ChatGPT, Claude connectors and the Poe bot) runs the same code. On Poe, the bot receives only the message you send it, checks it in memory and replies; it does not keep conversations. Like any web service, its hosting provider may keep short-lived technical logs (IP address, time, request size) for security and abuse prevention. Request bodies are not logged.
 
 ## Contact
 
